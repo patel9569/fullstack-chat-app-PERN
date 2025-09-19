@@ -15,6 +15,7 @@
     "@react-oauth/google": "^0.12.2",
     "@tailwindcss/vite": "^4.1.13",
     "@vitejs/plugin-react": "^5.0.2",
+    "axios": "^1.12.2",
     "chat-app": "file:..",
     "daisyui": "^5.1.7",
     "emoji-picker-react": "^4.13.3",
