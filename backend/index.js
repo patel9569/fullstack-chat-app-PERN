@@ -4,6 +4,7 @@ import authRoutes from './src/routes/authRoutes.js';
 import messageRoutes from './src/routes/messageRoutes.js';
 import cors from 'cors';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import db, { initDB } from './src/lib/db.js';
 import { app, server, io } from './src/lib/socket.js';
 import { config } from 'dotenv';
