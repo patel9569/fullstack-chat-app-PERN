@@ -5,7 +5,7 @@ import { io } from "socket.io-client";
 
 
 
- const base_url = import.meta.env.MODE=== "development" ? "http://localhost:5001" : "/api"
+ const base_url = import.meta.env.MODE=== "development" ? "http://localhost:5001" : "/"
 export  const UserAuthStore = create((set,get)=>({
     authUser:null,
     isSigningUp:false,
