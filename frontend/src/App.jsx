@@ -47,7 +47,7 @@ if(!authUser && isCheckAuth){
       <Navbar/>
     <Routes>
 
-      <Route path='/' element={authUser?<Login/>:<Navigate to='/login'/>}/>
+      <Route path='/' element={authUser ? <Navigate to='/home'/> : <Login/>} />
       <Route path='/login' element={!authUser?<Login/>:<Navigate to='/home'/>}/>
       <Route path='/signup' element={!authUser?<Signup/>:<Navigate to='/home'/>}/>
       <Route path='/home' element={authUser?<Home/>:<Navigate to='/login' /> }/>
