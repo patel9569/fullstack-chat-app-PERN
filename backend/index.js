@@ -4,14 +4,11 @@ import authRoutes from './src/routes/authRoutes.js';
 import messageRoutes from './src/routes/messageRoutes.js';
 import cors from 'cors';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import db, { initDB } from './src/lib/db.js';
 import { app, server, io } from './src/lib/socket.js';
 import { config } from 'dotenv';
 
 config()
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 app.use(express.json({ limit: '10mb' }));
 app.use(cors({
@@ -24,20 +21,18 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use('/api/auth', authRoutes);
 app.use('/api/message', messageRoutes);
 
+
 const port = process.env.PORT ;
+const __dirname = path.resolve();
 
 
 
-if(process.env.NODE_ENV==="production"){
-  
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
- app.use(express.static(path.join(__dirname, "../frontend/dist")));
-
- 
-  app.get("/*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../frontend", "dist", "index.html"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
   });
-
 }
 
 (async () => {
