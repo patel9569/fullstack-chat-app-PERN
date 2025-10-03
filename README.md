@@ -1,50 +1,57 @@
-Fullstack Chat App (PERN Stack)
+# Fullstack Chat App (PERN Stack)
 
-🚀 Live Demo: Fullstack Chat App
+🚀 **Live Demo:** [Fullstack Chat App](https://fullstack-chat-app-pern.onrender.com/login)
 
-This is a real-time chat application built using the PERN stack with Socket.IO for instant messaging. It provides secure authentication, Google login integration, and message history persistence with PostgreSQL.
+A real-time chat application built using the **PERN stack** with **Socket.IO** for instant messaging.  
+It supports secure authentication (including Google OAuth), image uploads, emojis, message edits, read receipts, and stores chat history in PostgreSQL.
 
-🛠️ Tech Stack
+---
 
-PostgreSQL → Database for storing users & messages
+## 🛠 Tech Stack
 
-Express.js → Backend framework for APIs
+- **PostgreSQL** → Database for users & messages  
+- **Express.js** → Backend API layer  
+- **React.js** → Frontend UI  
+- **Node.js** → Server runtime  
+- **Socket.IO** → Real-time communication  
 
-React.js → Frontend for the user interface
+---
 
-Node.js → Server runtime environment
+## ✨ Features
 
-Socket.IO → Real-time bidirectional communication
+- 🔐 User registration & login (Email + Password)  
+- 🔑 Google OAuth integration  
+- 💬 Real-time 1-to-1 messaging  
+- 📷 Image uploads with **Cloudinary**  
+- 😀 Emoji support  
+- ✏️ Editable messages with read receipts  
+- 📜 Persistent chat history  
+- 🌍 Timezone handling (Asia/Kolkata)  
 
-✨ Features
+---
 
-🔐 User authentication (Register/Login with email & password)
+## 📸 Screenshots
 
-🔑 Google OAuth integration
+![Screenshot 1](https://github.com/user-attachments/assets/a0847027-566c-4ab6-be6a-bd5d891a4657)  
+![Screenshot 2](https://github.com/user-attachments/assets/e6cc20ea-fe4f-413c-ba6d-4b1cc5f4f6d0)  
+![Screenshot 3](https://github.com/user-attachments/assets/e64bd1f3-cf36-4564-ac40-d38160edc7ed)  
+![Screenshot 4](https://github.com/user-attachments/assets/da7139a9-ebf9-4190-b043-83fdac6ee906)  
+![Screenshot 5](https://github.com/user-attachments/assets/8a9c1450-8792-4d8e-8592-b737b23d499e)  
 
-💬 Real-time one-to-one chat using Socket.IO
+---
 
-📷 Image upload support with Cloudinary
+## ⚙️ Setup Instructions
 
-😀 Emoji support
-
-📜 Chat history stored in PostgreSQL
-
-✏️ Edit messages & track read receipts
-
-🌍 Timezone handling (Asia/Kolkata)
-
-📸 Screenshots
-<img width="1920" height="907" alt="image" src="https://github.com/user-attachments/assets/a0847027-566c-4ab6-be6a-bd5d891a4657" /> <img width="1920" height="903" alt="image" src="https://github.com/user-attachments/assets/e6cc20ea-fe4f-413c-ba6d-4b1cc5f4f6d0" /> <img width="1920" height="902" alt="image" src="https://github.com/user-attachments/assets/e64bd1f3-cf36-4564-ac40-d38160edc7ed" /> <img width="1920" height="902" alt="image" src="https://github.com/user-attachments/assets/da7139a9-ebf9-4190-b043-83fdac6ee906" /> <img width="1920" height="902" alt="image" src="https://github.com/user-attachments/assets/8a9c1450-8792-4d8e-8592-b737b23d499e" />
-⚙️ Setup Instructions
-1. Clone the repository
-git clone https://github.com/your-username/fullstack-chat-app-PERN.git
+### 1. Clone Repository
+```bash
+git clone https://github.com/patel9569/fullstack-chat-app-PERN.git
 cd fullstack-chat-app-PERN
+```
 
-2. Configure environment variables
+### 2. Create `.env` file
+Place it in the backend root (or project root if unified):
 
-Create a .env file in the backend root:
-
+```env
 PORT=5001
 SUPER_SECRET=chatapp@2003
 NODE_ENV=development
@@ -61,15 +68,14 @@ PGPORT=...
 
 GOOGLE_CLIENT_ID=...
 GOOGLE_CLIENT_SECRET=...
+```
 
-3. Setup PostgreSQL Database
+---
 
-Create a free account at Neon
+### 3. Setup PostgreSQL Database
+You can use [Neon](https://neon.com/) (free Postgres hosting). Run:
 
-Choose Postgres Database
-
-Run the following queries:
-
+```sql
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 CREATE TABLE IF NOT EXISTS users (
@@ -94,43 +100,48 @@ CREATE TABLE IF NOT EXISTS message (
   created_at TIMESTAMPTZ DEFAULT (CURRENT_TIMESTAMP AT TIME ZONE 'Asia/Kolkata'),
   updated_at TIMESTAMPTZ DEFAULT (CURRENT_TIMESTAMP AT TIME ZONE 'Asia/Kolkata')
 );
+```
 
-4. Setup Google Authentication
+---
 
-Go to Google Cloud Console
+### 4. Setup Google OAuth
+1. Go to **Google Cloud Console**  
+2. Create an **OAuth 2.0 Client ID**  
+3. Copy **Client ID** & **Client Secret** into `.env`  
+4. Add **Authorized redirect URIs**  
 
-Create an OAuth 2.0 Client ID
+---
 
-Add the credentials to your .env file
-
-Screenshots of setup:
-<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/b343c369-f857-434e-8ed9-3121df5d8911" />
-<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/b1920fdb-b6c4-480b-be6c-99c4b89c5b59" />
-
-5. Install dependencies & build the project
+### 5. Install Dependencies & Build
+```bash
 npm install
 npm run build
+```
 
-6. Start the application
+### 6. Run the App
+```bash
 npm start
+```
 
-🚀 Deployment
+---
 
-Frontend & Backend: Can be deployed on Render
+## 🚀 Deployment
 
-Database: Neon PostgreSQL
+- **Frontend + Backend**: [Render](https://render.com/)  
+- **Database**: [Neon PostgreSQL](https://neon.com/)  
+- **Images**: [Cloudinary](https://cloudinary.com/)  
 
-Image Storage: Cloudinary
+---
 
-📌 Future Improvements
+## 📌 Future Improvements
 
-Group chat support
+- Group chat functionality  
+- Message search  
+- Push notifications  
 
-Message search functionality
+---
 
-Push notifications
+## 👨‍💻 Author
 
-👨‍💻 Author
-
-Developed by [Your Name]
-🔗 Project Demo
+Developed by **[Patel9569](https://github.com/patel9569)**  
+🔗 [Live Demo](https://fullstack-chat-app-pern.onrender.com/login)
