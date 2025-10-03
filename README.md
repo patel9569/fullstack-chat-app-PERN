@@ -141,12 +141,6 @@ npm start
 
 ---
 
-## 👨‍💻 Author
-
-Developed by **[Patel9569](https://github.com/patel9569)**  
-🔗 [Live Demo](https://fullstack-chat-app-pern.onrender.com/login)
-
----
 
 ## 🙏 Acknowledgements
 
