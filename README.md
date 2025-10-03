@@ -145,3 +145,10 @@ npm start
 
 Developed by **[Patel9569](https://github.com/patel9569)**  
 🔗 [Live Demo](https://fullstack-chat-app-pern.onrender.com/login)
+
+---
+
+## 🙏 Acknowledgements
+
+- This project was inspired by [Burak Orkmez's Fullstack Chat App](https://github.com/burakorkmez/fullstack-chat-app) and his YouTube tutorial.
+- Thank you for the guidance which helped in building and customizing this app.
